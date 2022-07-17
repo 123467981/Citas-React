@@ -1,6 +1,6 @@
 import Paciente from "./Paciente";
 
-const ListadoPacientes = () => {
+const ListadoPacientes = ({pacientes}) => {
     return (
         <div className="md:w-1/2 lg:w-3/5 mt-10 md:m-0">
             <h1 className="text-center text-3xl font-black">Listado Pacientes</h1>
@@ -11,17 +11,21 @@ const ListadoPacientes = () => {
 
             {/* Patients */}
             <div className="md:h-screen md:overflow-y-scroll md:mt-5 mx-3 md:mx-0">
-                <Paciente></Paciente>
-                <Paciente></Paciente>
-                <Paciente></Paciente>
-                <Paciente></Paciente>
-                <Paciente></Paciente>
-                <Paciente></Paciente>
-                <Paciente></Paciente>
-                <Paciente></Paciente>
+                {pacientes.map(paciente => {
+                    return(
+                        <Paciente 
+                            name={paciente.name}
+                            owner={paciente.owner}
+                            email={paciente.email}
+                            date={paciente.date}
+                            symptoms={paciente.symptoms}
+                        >
+                        </Paciente>
+                    );
+                })}
             </div>
         </div>
     )
 }
 
-export default ListadoPacientes
+export default ListadoPacientes;
