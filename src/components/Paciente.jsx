@@ -1,4 +1,7 @@
-const Paciente = ({name, owner, email, date, symptoms}) => {
+const Paciente = ({patient}) => {
+
+    const {name, owner, email, date, symptoms} = patient;
+
     return (
         <div className="mt-5 bg-white rounded-lg shadow-md px-5 py-10">
             <p className="font-bold uppercase mb-5 text-gray-700">

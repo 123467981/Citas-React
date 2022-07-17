@@ -14,11 +14,7 @@ const ListadoPacientes = ({pacientes}) => {
                 {pacientes.map(paciente => {
                     return(
                         <Paciente 
-                            name={paciente.name}
-                            owner={paciente.owner}
-                            email={paciente.email}
-                            date={paciente.date}
-                            symptoms={paciente.symptoms}
+                            patient={paciente}
                         >
                         </Paciente>
                     );
