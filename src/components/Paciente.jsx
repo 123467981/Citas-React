@@ -1,6 +1,6 @@
-const Paciente = ({patient}) => {
+const Paciente = ({ patient }) => {
 
-    const {name, owner, email, date, symptoms} = patient;
+    const { name, owner, email, date, symptoms } = patient;
 
     return (
         <div className="mt-5 bg-white rounded-lg shadow-md px-5 py-10">
@@ -24,6 +24,17 @@ const Paciente = ({patient}) => {
                 Síntomas: {''}
                 <span className="font-normal normal-case">{symptoms}</span>
             </p>
+
+            <div className="md:flex justify-between mt-10">
+                <button
+                    type="button"
+                    className="bg-indigo-600 p-2 md:px-5 text-white font-bold hover:bg-indigo-700 duration-200 rounded-md uppercase block w-full md:inline md:w-auto"
+                >Editar</button>
+                <button
+                    type="button"
+                    className="bg-red-700 text-white p-2 md:px-5 rounded-md hover:bg-red-800 duration-200 uppercase font-bold block mt-2 md:mt-0 w-full md:inline md:w-auto"
+                >Eliminar</button>
+            </div>
         </div>
     );
 }

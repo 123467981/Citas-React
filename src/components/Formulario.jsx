@@ -27,19 +27,18 @@ const Formulario = ({pacientes, setPacientes}) => {
             setError(true);
         } else {
             setError(false);
-        }
 
-        // Patient object
-        const patientObject = {
-            name, 
-            owner, 
-            email, 
-            date, 
-            symptoms,
-            id: generateId()
+            // Patient object
+            const patientObject = {
+                name, 
+                owner, 
+                email, 
+                date, 
+                symptoms,
+                id: generateId()
+            }
+            setPacientes([...pacientes, patientObject]);
         }
-
-        setPacientes([...pacientes, patientObject]);
 
         // Empty form
         setName('');
