@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 function App() {
   const [pacientes, setPacientes] = useState([]);
+  const [paciente, setPaciente] = useState({});
 
   return (
     <div className='container mx-auto mt-14 mb-14'>
@@ -13,8 +14,12 @@ function App() {
         <Formulario
           pacientes={pacientes}
           setPacientes={setPacientes}
+          paciente={paciente}
         ></Formulario>
-        <ListadoPacientes pacientes={pacientes}></ListadoPacientes>
+        <ListadoPacientes 
+          pacientes={pacientes} 
+          setPaciente={setPaciente}
+        ></ListadoPacientes>
       </div>
     </div>
   );

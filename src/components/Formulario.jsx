@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Error from "./Error";
 
-const Formulario = ({pacientes, setPacientes}) => {
+const Formulario = ({pacientes, setPacientes, paciente}) => {
     const [name, setName] = useState('');
     const [owner, setOwner] = useState('');
     const [email, setEmail] = useState('');
@@ -10,8 +10,17 @@ const Formulario = ({pacientes, setPacientes}) => {
 
     const [error, setError] = useState(false);
 
-    // GenerateId function
+    useEffect(() => {
+        if(Object.keys(paciente).length > 0){
+            setName(paciente.name)
+            setOwner(paciente.owner)
+            setEmail(paciente.email)
+            setDate(paciente.date)
+            setSymptoms(paciente.symptoms)
+        }
+    }, [paciente])
 
+    // GenerateId function
     const generateId = () => {
         let dateRandom = Date.now().toString(36);
         let numberRandom = Math.random().toString(36).substring(2);
@@ -118,7 +127,7 @@ const Formulario = ({pacientes, setPacientes}) => {
                 {/* Submit Button */}
                 <input
                     type="submit"
-                    value={"Agregar Paciente"}
+                    value={paciente.id ? 'Editar paciente' : 'Agregar paciente'}
                     className="bg-indigo-600 text-white p-2 w-full rounded-md mt-3 text-base font-bold hover:bg-indigo-700 cursor-pointer duration-200 uppercase"
                 />
             </form>

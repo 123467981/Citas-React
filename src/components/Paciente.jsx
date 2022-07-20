@@ -1,4 +1,4 @@
-const Paciente = ({ patient }) => {
+const Paciente = ({ patient, setPaciente }) => {
 
     const { name, owner, email, date, symptoms } = patient;
 
@@ -29,6 +29,7 @@ const Paciente = ({ patient }) => {
                 <button
                     type="button"
                     className="bg-indigo-600 p-2 md:px-5 text-white font-bold hover:bg-indigo-700 duration-200 rounded-md uppercase block w-full md:inline md:w-auto"
+                    onClick={() => setPaciente(patient)}
                 >Editar</button>
                 <button
                     type="button"
